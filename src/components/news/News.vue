@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a href="#" class="news">
+    <km-post>
       <div class="news_img">
         <img src="../news/img/news/news1.jpg" />
       </div>
@@ -10,16 +10,16 @@
           мертв. Но...</strong
         >
       </div>
-    </a>
-    <a href="#" class="news">
+    </km-post>
+    <km-post>
       <div class="news_img">
         <img src="../news/img/news/news2.jpg" />
       </div>
       <div class="news_text">
         <strong>Новая модная метал-группа с женским вокалом (кстати...</strong>
       </div>
-    </a>
-    <a href="" class="news">
+    </km-post>
+    <km-post>
       <div class="news_img">
         <img src="../news/img/news/news3.jpg" />
       </div>
@@ -29,43 +29,20 @@
           Женчаком</strong
         >
       </div>
-    </a>
+    </km-post>
   </div>
 </template>
 
 <script>
+import KmPost from './Post.vue'
 export default {
   name: "KmNews",
+  components: {
+  KmPost,
+  },
 };
 </script>
 
 <style scoped>
-.news {
-  max-height: 130px;
-  background-color: #ffffff;
-  margin: 10px;
-  display: flex;
-  background: rgba(25, 30, 55, 0.8);
-}
-.news_img {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 30%;
-  margin: 0 10px;
-}
-.news_img img {
-  height: 80%;
-  max-width: 100%;
-}
-.news strong {
-  display: block;
-  color: #ffffff;
-  margin: 0 10px;
-}
-.news_text {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 </style>
