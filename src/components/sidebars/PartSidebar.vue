@@ -16,7 +16,7 @@ export default {
   background-color: #ffffff;
   padding: 10px;
   border-radius: 15px;
-  background-image: url("/img/part_background.jpg");
+  background-image: url("img/part_background.jpg");
   margin: 10px 0;
 }
 .part_side * {
@@ -24,5 +24,17 @@ export default {
   text-align: center;
   margin: 5px;
   color: #ffffff;
+}
+.part_side form a {
+  color: #ffffff;
+}
+.form_submit {
+  max-width: 70px;
+  border-radius: 5px;
+  border: none;
+  background-color: #ff8100;
+}
+.form_submit:hover {
+  background-color: #ffd400;
 }
 </style>
