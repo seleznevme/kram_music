@@ -61,17 +61,4 @@ a:active {
   background-image: url("img/all_background.jpg");
   min-height: 100%;
 }
-
-.part_side form a {
-  color: #ffffff;
-}
-.form_submit {
-  max-width: 70px;
-  border-radius: 5px;
-  border: none;
-  background-color: #ff8100;
-}
-.form_submit:hover {
-  background-color: #ffd400;
-}
 </style>
