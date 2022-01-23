@@ -22,6 +22,7 @@ export default {
   height: 150px;
   margin: 10px auto;
   border-radius: 20px;
-  background-image: url("img/footer_background.jpg");
+  background-color: rgba(25, 30, 55);;  
+  border: 5px solid #ff8100;
 }
 </style>

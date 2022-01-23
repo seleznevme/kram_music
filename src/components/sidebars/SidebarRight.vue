@@ -1,8 +1,5 @@
 <template>
-  <div class="sidebar_right">
-    <part-sidebar>
-      <input type="search" name="" placeholder="Поиск" />
-    </part-sidebar>
+  <div class="sidebar_right">    
     <part-sidebar>
       <span
         >На мой взгляд очень актуальная тема, т.к. у нас много людей создающих

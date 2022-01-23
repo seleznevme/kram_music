@@ -14,7 +14,7 @@ export default {
 .news {
   max-height: 130px;
   background-color: #ffffff;
-  margin: 10px;
+  margin: 10px auto;
   display: flex;
   background: rgba(25, 30, 55, 0.8);
 }
