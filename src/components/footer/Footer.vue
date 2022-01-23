@@ -1,13 +1,15 @@
 <template>
   <footer>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <div class="footer_wrapper"></div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="footer_wrapper">
+            
           </div>
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
 </template>
 
 <script>
@@ -22,7 +24,9 @@ export default {
   height: 150px;
   margin: 10px auto;
   border-radius: 20px;
-  background-color: rgba(25, 30, 55);;  
+  background-color: rgba(25, 30, 55);
   border: 5px solid #ff8100;
+}
+.amp {
 }
 </style>
