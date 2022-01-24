@@ -18,6 +18,6 @@ export default {
   align-items: center;
   justify-content: center;
   background: rgba(25, 30, 55, 0.8);
-  padding: 10px;
+  padding: 15px;
 }
 </style>

@@ -49,11 +49,12 @@ export default {
   align-items: center;
   justify-content: center;
   width: 30%;
-  overflow: hidden;
+  height: 130px;  
   }
 .news_img img { 
   height: auto;
-  width: 100%;
+  max-height: 100px;
+  max-width: 100%;
   margin: 0 15px;
 }
 .news_text {
