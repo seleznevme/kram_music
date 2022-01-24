@@ -16,7 +16,7 @@
             <sidebar-left />
           </div>
           <div class="col-6">
-            <km-news />
+            <router-view/>
           </div>
           <div class="col-3">
             <sidebar-right />
@@ -33,7 +33,6 @@ import KmHeader from "./components/header/Header.vue";
 import KmFooter from "./components/footer/Footer.vue";
 import SidebarLeft from "./components/sidebars/SidebarLeft.vue";
 import SidebarRight from "./components/sidebars/SidebarRight.vue";
-import KmNews from "./components/news/News.vue";
 import NavTop from "./components/navigation/NavTop.vue";
 import NavLeft from "./components/navigation/NavLeft.vue";
 export default {
@@ -42,8 +41,7 @@ export default {
     KmHeader,
     KmFooter,
     SidebarLeft,
-    SidebarRight,
-    KmNews,
+    SidebarRight,    
     NavTop,
     NavLeft
   },
