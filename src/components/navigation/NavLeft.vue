@@ -1,5 +1,6 @@
 <template>
   <div @click.stop class="wrapper">
+    <span  class="site_name">Kram-music</span>
     <nav-button  class="btn_nav_left" :class="{ btn_active: $route.path == '/' }" @click="$router.push('/')">
       <span>Главная</span>
     </nav-button>
@@ -57,5 +58,12 @@ export default {
 }
 .btn_active {
     background-color: #ffd400;
+}
+.site_name {
+  color: #ff8100;
+  margin: 20px 0 10px 0;
+  line-height: 100%;
+  font-size: 20px;
+  cursor: pointer;
 }
 </style>

@@ -4,7 +4,7 @@
       <input type="" name="" placeholder="Логин" />
       <input type="password" name="" placeholder="Пароль" />
       <input class="form_submit" type="submit" name="" value="Войти" />
-      <a href="#">регистрация</a>
+      <span class="reg" @click="$router.push('/Registration')">регистрация</span>
     </form>
   </part-sidebar>
   <part-sidebar>
@@ -26,5 +26,7 @@ export default {
 </script>
 
 <style scoped>
-
+.reg {
+  cursor: pointer;
+}
 </style>

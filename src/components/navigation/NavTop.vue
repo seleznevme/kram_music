@@ -12,8 +12,17 @@
         </nav-button>
       </div>
       <div class="col-6">
-        <nav-button>
+        <nav-button v-if="$route.path == '/'">
           <span>Новости</span>
+        </nav-button>
+        <nav-button v-if="$route.path == '/AddNews'">
+          <span>Добавление новости</span>
+        </nav-button>
+        <nav-button v-if="$route.path == '/Registration'">
+          <span>Регистрация пользователя</span>
+        </nav-button>
+        <nav-button v-if="$route.path == '/About'">
+          <span>О нас</span>
         </nav-button>
       </div>
       <div class="col-3">
@@ -38,6 +47,7 @@ export default {
   data () {
     return {
       click: false,
+      path: '',
     }    
   },
   methods: {
@@ -45,7 +55,7 @@ export default {
       this.click = true;
       this.$emit ('nav_show', this.click);
       this.click = false;
-    }
+    }    
   }
 };
 

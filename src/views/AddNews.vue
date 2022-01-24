@@ -11,7 +11,7 @@
             <span>Прикрепить изображение</span>
             <input type="file" />
           </div>
-          <div>
+          <div class="btn_submit">
             <input type="submit" />
           </div>
         </div>
@@ -58,5 +58,8 @@ export default {
 .add_img {
   display: flex;
   flex-direction: column;
+}
+.btn_submit {
+  margin-left: auto;
 }
 </style>
