@@ -17,11 +17,10 @@
 </template>
 
 <script>
-import NavButton from "./NavButton.vue";
 export default {
   name: "NavLeft",
   components: {
-    NavButton,
+    
   },
   data () {   
       return {
@@ -37,7 +36,7 @@ export default {
 };
 </script>
 
-<style  scoped>
+<style scoped>
 .wrapper {
   display: flex;
   justify-content: flex-start;
