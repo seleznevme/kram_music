@@ -7,12 +7,8 @@
 </template>
 
 <script>
-import CoverMain from '@/components/CoverMain.vue'
 export default {
-  name: "About",
-  components: {
-  CoverMain,
-  },
+  name: "About",  
 };
 </script>
 

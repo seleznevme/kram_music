@@ -34,11 +34,10 @@
 </template>
 
 <script>
-import CoverMain from '@/components/CoverMain.vue'
 export default {
   name: "KmNews",
   components: {
-  CoverMain,
+  
   },
 };
 </script>

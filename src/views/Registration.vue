@@ -25,12 +25,8 @@
 </template>
 
 <script>
-import CoverMain from "@/components/CoverMain.vue";
 export default {
-  name: "Registration",
-  components: {
-    CoverMain,
-  },
+  name: "Registration",  
 };
 </script>
 

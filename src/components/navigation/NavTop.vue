@@ -38,11 +38,11 @@
 </template>
 
 <script>
-import NavButton from "./NavButton.vue";
+
 export default {
   name: "NavTop",
   components: {
-    NavButton,
+    
   },
   data () {
     return {

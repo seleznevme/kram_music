@@ -3,7 +3,7 @@
     <form>
       <input type="" name="" placeholder="Логин" />
       <input type="password" name="" placeholder="Пароль" />
-      <input class="form_submit" type="submit" name="" value="Войти" />
+      <form-submit  value="Войти" />      
       <span class="reg" @click="$router.push('/Registration')">регистрация</span>
     </form>
   </part-sidebar>
@@ -16,17 +16,15 @@
 </template>
 
 <script>
-import PartSidebar from './PartSidebar.vue'
+
 export default {
-  name: "SidebarLeft",
-  components: {
-  PartSidebar,
-  },
+  name: "SidebarLeft",  
 };
 </script>
 
 <style scoped>
 .reg {
+  color: #ffffff;
   cursor: pointer;
 }
 </style>

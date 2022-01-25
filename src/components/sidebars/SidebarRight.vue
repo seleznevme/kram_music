@@ -12,12 +12,9 @@
 </template>
 
 <script>
-import PartSidebar from './PartSidebar.vue'
+
 export default {
-  name: "SidebarRight",
-  components: {
-  PartSidebar,
-  },
+  name: "SidebarRight",  
 };
 </script>
 

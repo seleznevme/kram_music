@@ -12,7 +12,7 @@
             <input type="file" />
           </div>
           <div class="btn_submit">
-            <input type="submit" />
+            <form-submit  value="Добавить" />
           </div>
         </div>
       </form>
@@ -21,12 +21,8 @@
 </template>
 
 <script>
-import CoverMain from "@/components/CoverMain.vue";
 export default {
-  name: "AddNews",
-  components: {
-    CoverMain,
-  },
+  name: "AddNews",  
 };
 </script>
 

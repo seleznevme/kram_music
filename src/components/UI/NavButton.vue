@@ -1,17 +1,17 @@
 <template>
-   <div class="nav_button">
+   <div class="nav_btn">
        <slot></slot>
    </div>
 </template>
 
 <script>
 export default {
-  name: "NavButton",
+  name: "nav-button",
 };
 </script>
 
-<style >
-.nav_button {
+<style scoped>
+.nav_btn {
   display: flex;
   justify-content: center;
   align-items: center;
