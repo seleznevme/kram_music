@@ -12,26 +12,24 @@
     </nav-button>
     <nav-button class="btn_nav_left" :class="{ btn_active: $route.path == '/About' }" @click="$router.push('/About')">
       <span>О нас</span>
-    </nav-button>
+    </nav-button>    
   </div>
 </template>
 
 <script>
-export default {
+export default {  
   name: "NavLeft",
-  components: {
-    
-  },
+  
   data () {   
       return {
           path1: '/',
           path2: '/AddNews',
           path3: '/Registration',
-          path4: '/About',
+          path4: '/About',          
       }    
   },
   methods: {
-
+    
   }
 };
 </script>
@@ -56,7 +54,7 @@ export default {
   cursor: pointer;
 }
 .btn_active {
-    background-color: #ffd400;
+    background-color: #ffd400 !important;
 }
 .site_name {
   color: #ff8100;

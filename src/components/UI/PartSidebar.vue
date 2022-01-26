@@ -14,7 +14,7 @@ export default {
 .part_side {
   text-align: center;
   background-color: #ffffff;
-  padding: 10px;
+  padding: 15px;
   border-radius: 15px;
   background-image: url("./img/part_background.jpg");
   margin: 10px 0;

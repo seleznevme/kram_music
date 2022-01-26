@@ -2,17 +2,22 @@
   <div>
     <cover-main>
       <form class="cover">
-        <span>Тема</span>
-        <input class="title" type="text" />
-        <span>Содержание</span>
-        <textarea class="body" type="text" />
+        <form-input
+          custom_title = "Тема"
+          custom_placeholder = "Тема статьи"
+          custom_type = "text"/>        
+        <form-textarea
+          custom_title = "Содержание"
+          custom_placeholder = "Текст статьи"
+          custom_height = "200px" />       
         <div class="btn_group">
           <div class="add_img">
             <span>Прикрепить изображение</span>
-            <input type="file" />
-          </div>
+            <add-file />          
+          </div>          
           <div class="btn_submit">
-            <form-submit  value="Добавить" />
+            <form-submit
+            custom_value = "Добавить"/>
           </div>
         </div>
       </form>
@@ -21,8 +26,10 @@
 </template>
 
 <script>
+import AddFile from '../components/UI/AddFile.vue';
 export default {
-  name: "AddNews",  
+  components: { AddFile },
+  name: "AddNews",
 };
 </script>
 
@@ -35,17 +42,6 @@ export default {
 .cover span {
   color: #ffffff;
   margin-top: 10px;
-}
-.title {
-  width: 100%;
-  padding: 0 10px;
-  outline: none;
-}
-.body {
-  width: 100%;
-  padding: 10px;
-  height: 200px;
-  outline: none;
 }
 .btn_group {
   display: flex;
