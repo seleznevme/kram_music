@@ -1,16 +1,29 @@
 <template>
   <div class="gender_wrapper">
-    <span>Пол:</span>
-    <input type="radio" name="gender"/>
-    <span>M</span>
-    <input type="radio" name="gender"/>
-    <span>Ж</span>
+    <span class="title">Пол:</span>
+    <input type="radio" @change="male" name="gender"/>
+    <span class="label">M</span>
+    <input type="radio" @change="female" name="gender"/>
+    <span class="label">Ж</span>
   </div>
 </template>
 
 <script>
 export default {
   name: "form-gender",
+  props: {
+    modelValue: {
+      type: String,
+    }
+  },
+  methods: {
+    male () {
+      this.$emit ('update:modelValue','мужской')      
+    },
+    female () {
+      this.$emit ('update:modelValue','женский')
+    }
+  }
 };
 </script>
 
@@ -18,14 +31,19 @@ export default {
 .gender_wrapper {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
 }
-span {
+.title {
   color: #ffffff;
-  margin-top: 5px;
-  margin-left: 5px;
+  margin: 5px 0; 
+}
+.label {
+  margin-left: 10px;
+  color: #ffffff;
 }
 input {
-  width: 100%;
-  height: 70%;
+  width: 15px;
+  height: 15px;
+  margin-left: 15px;
 }
 </style>

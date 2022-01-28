@@ -43,18 +43,10 @@ export default {
   name: "NavTop",
   components: {
     
-  },
-  data () {
-    return {
-      click: false,
-      path: '',
-    }    
-  },
+  }, 
   methods: {
-    show_nav () {
-      this.click = true;
-      this.$emit ('nav_show', this.click);
-      this.click = false;
+    show_nav () {      
+      this.$emit ('show_nav');      
     }    
   }
 };

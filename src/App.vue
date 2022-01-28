@@ -3,14 +3,17 @@
     <km-header />
     <nav>
       <nav-top
-      @nav_show = 'show_navbar'
-      />
+      @show_nav = 'show_left_navbar' />
     </nav>    
     <nav>
       <transition name="slide-fade">
-        <nav-left v-show="show_left_navbar"/>
+        <nav-left
+        @show_dialog = "show_dialog_window"
+        v-model:show="show_navbar"/>
       </transition>
     </nav>
+    <dialog-window
+    v-model:show="show_dialog"/>>
     <main>
       <div class="container-fluid">
         <div class="row">
@@ -49,16 +52,17 @@ export default {
   },
   data () {
     return {
-      show_left_navbar: false,      
+      show_navbar: false,
+      show_dialog: false,      
     }    
   },
   methods: {
-    show_navbar () {
-      this.show_left_navbar = true;       
+    show_left_navbar () {
+      this.show_navbar = true;        
     },
-    hide_navbar () {    
-      this.show_left_navbar = false;      
-    }
+    show_dialog_window () {
+      this.show_dialog = true;      
+    },   
   }
 };
 </script>
@@ -74,6 +78,9 @@ export default {
 * {
   font-family: intro_bold_italic;
   color: #000000;
+}
+main {
+  margin-top: -20px;
 }
 input:focus {
   outline: 0;

@@ -1,12 +1,20 @@
 <template>
   <span>{{custom_title}}</span>
-  <textarea style="height: {{custom_height}};" :placeholder="custom_placeholder" />
+  <textarea :value="modelValue" :style="height_textarea" @input="updateTextarea" :placeholder="custom_placeholder" />
 </template>
 
 <script>
 export default {
     name: 'form-textarea',
+    data () {
+        return {
+          height_textarea: 'height: ' + this.custom_height + ';',
+        }
+    },    
     props: {
+      modelValue: {
+      type: String,     
+      },
       custom_title: {
       type: String,
       default: 'Название поля',      
@@ -17,8 +25,13 @@ export default {
       },
       custom_height: {
       type: String,
-      default: 'auto',      
-      },
+      default: '100px',      
+      },            
+    },
+    methods: {
+      updateTextarea (event) {
+        this.$emit('update:modelValue', event.target.value);
+      }
     }
 }
 </script>
@@ -30,7 +43,7 @@ span {
 }
 textarea {
   width: 100%;
-  padding: 0 10px;
+  padding: 5px 10px;
   margin-bottom: 15px;
   outline: none;  
 }

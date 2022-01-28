@@ -5,15 +5,17 @@
         <form-input
           custom_title = "Тема"
           custom_placeholder = "Тема статьи"
-          custom_type = "text"/>        
+          custom_type = "text"
+          v-model = "post.title"/>                
         <form-textarea
           custom_title = "Содержание"
           custom_placeholder = "Текст статьи"
-          custom_height = "200px" />       
+          custom_height = "200px"
+          v-model = "post.body" />                      
         <div class="btn_group">
           <div class="add_img">
             <span>Прикрепить изображение</span>
-            <add-file />          
+            <add-file />       
           </div>          
           <div class="btn_submit">
             <form-submit
@@ -30,6 +32,15 @@ import AddFile from '../components/UI/AddFile.vue';
 export default {
   components: { AddFile },
   name: "AddNews",
+  data () {
+    return {
+      post: {
+        id: '',
+        title: '',
+        body: ''
+      }
+    }
+  }
 };
 </script>
 
@@ -46,6 +57,7 @@ export default {
 .btn_group {
   display: flex;
   align-items: flex-end;
+  justify-content: space-between;
 }
 .add_img {
   display: flex;

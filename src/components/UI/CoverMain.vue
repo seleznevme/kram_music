@@ -1,7 +1,7 @@
 <template>
-   <a href="#" class="cover">
+   <div class="cover">
        <slot></slot>
-   </a>
+   </div>
 </template>
 
 <script>

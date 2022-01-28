@@ -1,46 +1,52 @@
 <template>
   <div>
-    <div class="cover">
-      <form class="form_registration">
+    <cover-main>
+      <form @submit.prevent class="form_registration">
         <div class="reg_part_left">
           <form-input
           custom_title = "Логин"
           custom_placeholder = "Имя на сайте"
           custom_type = "login"
-          v-model = "user.login"/>
+          v-model = "login"/>
           <form-input
           custom_title = "Пароль"
           custom_placeholder = "Пароль"
           custom_type = "password"
-          v-model = "user.pass"/>                 
+          v-model = "pass"/>                 
           <form-input
           custom_title = "Повторите пароль"
           custom_placeholder = "Еще раз"
-          custom_type = "password"/>
-          <form-gender />        
+          custom_type = "password"
+          v-model = "check_pass"/>
+          <form-gender
+          v-model = "gender"/>
+          <form-select
+          v-model = "music_ganre"/>
         </div>
         <div class="reg_part_right">
           <form-input
           custom_title = "Имя"
-          custom_placeholder = "Ваш e-mail"
+          custom_placeholder = "Ваше имя"
           custom_type = "name"
-          v-model = "user.name"/>
+          v-model = "name"/>
           <form-input
           custom_title = "mail"
-          custom_placeholder = "Ваше имя"
+          custom_placeholder = "Ваш e-mail"
           custom_type = "mail"
-          v-model = "user.mail"/>
+          v-model = "mail"/>
           <form-textarea
           custom_title = "О себе"
-          custom_placeholder = "необязательно.."
-          v-model = "user.about"/>
+          custom_placeholder = "необязательно.."          
+          v-model = "about"
+          custom_height = "120px"/>         
           <div class="btn_group">
             <form-submit
+            @click="add_user"
             custom_value = "Реггистрация"/>
           </div>                        
         </div>        
       </form>
-    </div>
+    </cover-main>
   </div>
 </template>
 
@@ -49,17 +55,41 @@ export default {
   name: "Registration",
   data () {
     return {
-      user: {
-        id: '',
-        name: '',
-        gender: '',
-        mail: '',
-        login: '',
-        pass: '',
-        about:'',
-      }
+      user_list: [],      
+      name: '',
+      gender: '',
+      music_ganre: '',
+      mail: '',
+      login: '',
+      pass: '',
+      check_pass: '',
+      about:'',
     }
-  }
+  },
+  methods: {
+    add_user () {
+      const user = {        
+        id: Date.now (),
+        name: this.name,
+        gender: this.gender,
+        music_ganre: this.music_ganre,
+        mail: this.mail,
+        login: this.login,
+        pass: this.pass,
+        check_pass: this.check_pass,
+        about: this.about,
+      }
+    this.user_list.push (user);
+    this.name = '';
+    this.gender = '';
+    this.music_ganre = '';
+    this.mail = '';
+    this.login = '';
+    this.pass = '',
+    this.check_pass = '';
+    this.about = '';    
+    }
+  } 
 };
 </script>
 

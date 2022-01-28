@@ -6,6 +6,8 @@ import AddFile from '@/components/UI/AddFile.vue'
 import FormInput from '@/components/UI/FormInput.vue'
 import FormTextarea from '@/components/UI/FormTextarea.vue'
 import FormGender from '@/components/UI/FormGender.vue'
+import FormSelect from '@/components/UI/FormSelect.vue'
+import DialogWindow from '@/components/UI/DialogWindow.vue'
 
 export default [
     CoverMain,
@@ -15,5 +17,7 @@ export default [
     AddFile,
     FormInput,
     FormTextarea,
-    FormGender,    
+    FormGender,
+    FormSelect,
+    DialogWindow   
 ]

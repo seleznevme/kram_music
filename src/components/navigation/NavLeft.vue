@@ -1,40 +1,81 @@
 <template>
-  <div @click.stop class="wrapper">
-    <span  class="site_name">Kram-music</span>
-    <nav-button  class="btn_nav_left" :class="{ btn_active: $route.path == '/' }" @click="$router.push('/')">
-      <span>Главная</span>
-    </nav-button>
-    <nav-button class="btn_nav_left" :class="{ btn_active: $route.path == '/AddNews' }" @click="$router.push('/AddNews')">
-        <span>Добавить новостть</span>      
-    </nav-button>
-    <nav-button class="btn_nav_left" :class="{ btn_active: $route.path == '/Registration' }" @click="$router.push('/Registration')">
-      <span>Регистрация</span>
-    </nav-button>
-    <nav-button class="btn_nav_left" :class="{ btn_active: $route.path == '/About' }" @click="$router.push('/About')">
-      <span>О нас</span>
-    </nav-button>    
+  <div class="cover" @click="nav_hide" v-if="show">
+    <div @click.stop class="wrapper">
+      <span class="site_name"
+      @click="$router.push('/')">Kram-music</span>
+      <nav-button
+        class="btn_nav_left"
+        :class="{ btn_active: $route.path == '/' }"
+        @click="$router.push('/')"
+      >
+        <span>Главная</span>
+      </nav-button>
+      <nav-button
+        class="btn_nav_left"
+        :class="{ btn_active: $route.path == '/AddNews' }"
+        @click="$router.push('/AddNews')"
+      >
+        <span>Добавить новостть</span>
+      </nav-button>
+      <nav-button
+        class="btn_nav_left"
+        :class="{ btn_active: $route.path == '/Registration' }"
+        @click="$router.push('/Registration')">
+        <span>Регистрация</span>
+      </nav-button>
+      <nav-button
+        class="btn_nav_left"
+        :class="{ btn_active: $route.path == '/About' }"
+        @click="$router.push('/About')"
+      >
+        <span>О нас</span>
+      </nav-button>
+      <nav-button
+        class="btn_nav_left"        
+        @click="show_dialog">
+        <span>Напишите нам</span>
+      </nav-button>
+    </div>
   </div>
 </template>
 
 <script>
-export default {  
+export default {
   name: "NavLeft",
-  
-  data () {   
-      return {
-          path1: '/',
-          path2: '/AddNews',
-          path3: '/Registration',
-          path4: '/About',          
-      }    
+
+  data() {
+    return {
+      path1: "/",
+      path2: "/AddNews",
+      path3: "/Registration",
+      path4: "/About",
+      user_list: '',
+    };
+  },
+  props: {
+    show: {
+      type: Boolean,
+    },
   },
   methods: {
-    
-  }
+    nav_hide() {
+      this.$emit("update:show", false);
+    },
+    show_dialog() {
+      this.$emit("show_dialog");
+    },
+  },
 };
 </script>
 
 <style scoped>
+.cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
 .wrapper {
   display: flex;
   justify-content: flex-start;
@@ -54,7 +95,7 @@ export default {
   cursor: pointer;
 }
 .btn_active {
-    background-color: #ffd400 !important;
+  background-color: #ffd400 !important;
 }
 .site_name {
   color: #ff8100;
