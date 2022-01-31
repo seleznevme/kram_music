@@ -15,14 +15,17 @@
         <nav-button v-if="$route.path == '/'">
           <span>Новости</span>
         </nav-button>
-        <nav-button v-if="$route.path == '/AddNews'">
+        <nav-button v-else-if="$route.path == '/AddNews'">
           <span>Добавление новости</span>
         </nav-button>
-        <nav-button v-if="$route.path == '/Registration'">
+        <nav-button v-else-if="$route.path == '/Registration'">
           <span>Регистрация пользователя</span>
         </nav-button>
-        <nav-button v-if="$route.path == '/About'">
+        <nav-button v-else-if="$route.path == '/About'">
           <span>О нас</span>
+        </nav-button>
+        <nav-button v-else>
+          <span class="home_link" @click="$router.push('/')">Вернуться на главную</span>
         </nav-button>
       </div>
       <div class="col-3">
@@ -101,6 +104,9 @@ form {
   background-position: center;
 }
 .left_button {
+  cursor: pointer;
+}
+.home_link {
   cursor: pointer;
 }
 </style>

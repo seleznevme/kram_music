@@ -1,24 +1,26 @@
 <template>
   <div>
     <cover-main>
-      <form class="cover">
+      <form class="cover" @submit.prevent>
         <form-input
           custom_title = "Тема"
           custom_placeholder = "Тема статьи"
-          custom_type = "text"
-          v-model = "post.title"/>                
+          custom_type = "name"          
+          :modelValue="$store.state.posts.post.title"
+          @update:modelValue="(title) => this.$store.commit('post_title', title)"/>               
         <form-textarea
           custom_title = "Содержание"
           custom_placeholder = "Текст статьи"
           custom_height = "200px"
-          v-model = "post.body" />                      
+          :modelValue="$store.state.posts.post.body"
+          @update:modelValue="(body) => this.$store.commit('post_body', body)"/>                       
         <div class="btn_group">
           <div class="add_img">
             <span>Прикрепить изображение</span>
             <add-file />       
           </div>          
           <div class="btn_submit">
-            <form-submit
+            <form-submit @click="$store.commit('add_post')"  
             custom_value = "Добавить"/>
           </div>
         </div>
@@ -31,16 +33,7 @@
 import AddFile from '../components/UI/AddFile.vue';
 export default {
   components: { AddFile },
-  name: "AddNews",
-  data () {
-    return {
-      post: {
-        id: '',
-        title: '',
-        body: ''
-      }
-    }
-  }
+  name: "AddNews",  
 };
 </script>
 

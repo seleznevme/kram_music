@@ -3,11 +3,13 @@ import KmNews from '@/views/news/News.vue'
 import AddNews from '@/views/AddNews.vue'
 import Registration from '@/views/Registration.vue'
 import About from '@/views/About.vue'
+import PostPage from '@/views/news/PostPage.vue'
+import DeletePost from '@/views/CompletedAction/DeletePostCompleted.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'KmNewse',
+    name: 'KmNews',
     component: KmNews
   },
   {
@@ -24,6 +26,16 @@ const routes = [
     path: '/About',
     name: 'About',
     component: About
+  },
+  {
+    path: '/PostPage/:id',
+    name: 'PostPage',
+    component: PostPage,
+  },
+  {
+    path: '/DeletePost',
+    name: 'DeletePost',
+    component: DeletePost,
   },
 ]
 

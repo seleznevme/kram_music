@@ -2,6 +2,7 @@
   <div class="select_wrapper">
     <span>Какую музыку слушаете?</span>
     <select @change="select_ganre" v-model="selected">
+        <option disabled value="">Выберите...</option>
         <option>Всё подряд...</option>
         <option>Electronic dance</option>
         <option>Rock</option>
@@ -24,9 +25,9 @@ export default {
   name: "form-select",
   data() {
     return {
-      selected: 'Всё подряд...',
+      selected: '',
     }
-  },
+  },  
   methods: {
     select_ganre () {
       this.$emit('update:modelValue',this.selected)      

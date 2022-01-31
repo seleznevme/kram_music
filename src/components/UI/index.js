@@ -8,6 +8,8 @@ import FormTextarea from '@/components/UI/FormTextarea.vue'
 import FormGender from '@/components/UI/FormGender.vue'
 import FormSelect from '@/components/UI/FormSelect.vue'
 import DialogWindow from '@/components/UI/DialogWindow.vue'
+import UserList from '@/components/UI/UserList.vue'
+import PostButton from '@/components/UI/PostButton.vue'
 
 export default [
     CoverMain,
@@ -19,5 +21,7 @@ export default [
     FormTextarea,
     FormGender,
     FormSelect,
-    DialogWindow   
+    DialogWindow,
+    UserList,
+    PostButton
 ]
