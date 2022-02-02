@@ -17,9 +17,11 @@
       <div class="btn_group">
         <post-button
         button_name = "Удалить"        
-        @click="$router.push('/DeletePost'), $store.commit('dellete_post',$route.params.id)"/>          
+        @click="$store.commit('dellete_post',$route.params.id), $router.push('/DeletePostCompleted')"/>
+        <like-group /> <!-- ТУТ КОМПОНЕНТ С ЛАЙКАМИ НЕ ЗАБЫТЬ бы...-->      
         <post-button
-        button_name = "Редактировать"/>
+        button_name = "Редактировать"
+        @click="$router.push('/EditPost'), $store.commit('copy_post_edit',$route.params.id)"/>
       </div>
     </div>
     

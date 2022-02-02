@@ -1,6 +1,7 @@
 <template>
    <div class="post_btn">
        <span>{{ button_name }}</span>
+       <slot></slot>
    </div>
 </template>
 

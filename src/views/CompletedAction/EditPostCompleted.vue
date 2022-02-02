@@ -2,15 +2,15 @@
   <cover-main>
     <div class="cover_post">
       <div class="post_title">
-        <span>Пост удален</span>
+        <span>Пост отредактирован</span>
       </div>      
       <div class="btn_group">
         <post-button
         button_name = "Главная"
         @click="$router.push('/')" />          
         <post-button
-        button_name = "Добавить новый"
-        @click="$router.push('/AddPost')"/>
+        button_name = "Просмотр"
+        @click="$router.push('/PostPage/' + $store.state.posts.copy_post_edit.id)"/>
       </div>
     </div>
     

@@ -13,7 +13,7 @@
       <nav-button
         class="btn_nav_left"
         :class="{ btn_active: $route.path == '/AddNews' }"
-        @click="$router.push('/AddNews')"
+        @click="$router.push('/AddPost')"
       >
         <span>Добавить новостть</span>
       </nav-button>

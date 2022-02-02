@@ -10,6 +10,7 @@ import FormSelect from '@/components/UI/FormSelect.vue'
 import DialogWindow from '@/components/UI/DialogWindow.vue'
 import UserList from '@/components/UI/UserList.vue'
 import PostButton from '@/components/UI/PostButton.vue'
+import LikeGroup from '@/components/UI/LikesGroup.vue'
 
 export default [
     CoverMain,
@@ -23,5 +24,6 @@ export default [
     FormSelect,
     DialogWindow,
     UserList,
-    PostButton
+    PostButton,
+    LikeGroup,
 ]
