@@ -7,6 +7,8 @@ export const postModule = {
                 image: require('@/views/news/img/news/news1.jpg'),
                 like: 15,
                 dislike: 5,
+                add_like: false,
+                add_dislike: false,
             },
             {   id: 2,
                 title: 'В турах METALLICA и TOOL заболевших ковидом будут искать с помощью натренированных собак',
@@ -14,6 +16,8 @@ export const postModule = {
                 image: require('@/views/news/img/news/news2.jpg'),
                 like: 25,
                 dislike: 10,
+                add_like: false,
+                add_dislike: false,
             },
             {   id: 3,
                 title: 'Jeff Waters уходит с вокального поста ANNIHILATOR',
@@ -21,8 +25,9 @@ export const postModule = {
                 image: require('@/views/news/img/news/news3.jpg'),
                 like: 35,
                 dislike: 15,
-            },
-            
+                add_like: false,
+                add_dislike: false,
+            },            
         ],
         post: {
             id: '',
@@ -30,9 +35,10 @@ export const postModule = {
             body: '',
             image: require('@/views/news/img/news/news1.jpg'),
             like: 0,
-            dislike: 0,         
+            dislike: 0,
+            add_rating: false,      
         },        
-        copy_post_edit: '',
+        copy_post_edit: '',        
     }),
     mutations: {
         post_title(state, title) {
@@ -68,11 +74,33 @@ export const postModule = {
         },
         add_post_like(state, id){
             const index = state.post_list.findIndex(n => n.id == id);
-            state.post_list[index].like += 1;
+            if (state.post_list[index].add_like == false && state.post_list[index].add_dislike == false) {                
+                state.post_list[index].like += 1;
+                state.post_list[index].add_like = true;
+            } else if (state.post_list[index].add_like == true) {                              
+                state.post_list[index].like -= 1;
+                state.post_list[index].add_like = false;
+            } else if (state.post_list[index].add_dislike == true) {
+                state.post_list[index].like += 1;
+                state.post_list[index].add_like = true;
+                state.post_list[index].dislike -= 1;
+                state.post_list[index].add_dislike = false;
+            }          
         },
         add_post_dislike(state, id){
             const index = state.post_list.findIndex(n => n.id == id);
-            state.post_list[index].dislike += 1;
+            if (state.post_list[index].add_dislike == false && state.post_list[index].add_like == false) {                
+                state.post_list[index].dislike += 1;
+                state.post_list[index].add_dislike = true;
+            } else if (state.post_list[index].add_dislike == true) {
+                state.post_list[index].dislike -= 1;
+                state.post_list[index].add_dislike = false;
+            } else if (state.post_list[index].add_like == true) {
+                state.post_list[index].dislike += 1;
+                state.post_list[index].add_dislike = true;
+                state.post_list[index].like -= 1;
+                state.post_list[index].add_like = false;
+            }
         }
     },
     
