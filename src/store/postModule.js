@@ -85,7 +85,7 @@ export const postModule = {
                 state.post_list[index].add_like = true;
                 state.post_list[index].dislike -= 1;
                 state.post_list[index].add_dislike = false;
-            }          
+            }
         },
         add_post_dislike(state, id){
             const index = state.post_list.findIndex(n => n.id == id);
