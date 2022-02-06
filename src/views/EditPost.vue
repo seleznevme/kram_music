@@ -18,10 +18,15 @@
           <div class="add_img">
             <span>Прикрепить изображение</span>
             <add-file />       
-          </div>          
+          </div>
           <div class="btn_submit">
             <form-submit
-            @click="$store.commit('add_post_edit'), $router.push('/EditPostCompleted')"  
+            @click="$store.commit('cancel_post_edit')"  
+            custom_value = "Отмена"/>
+          </div>         
+          <div class="btn_submit">
+            <form-submit
+            @click="$store.commit('add_post_edit')"  
             custom_value = "Опубликовать"/>
           </div>
         </div>

@@ -4,9 +4,8 @@ import AddPost from '@/views/AddPost.vue'
 import Registration from '@/views/Registration.vue'
 import About from '@/views/About.vue'
 import PostPage from '@/views/news/PostPage.vue'
-import DeletePostCompleted from '@/views/CompletedAction/DeletePostCompleted.vue'
 import EditPost from '@/views/EditPost.vue'
-import EditPostCompleted from '@/views/CompletedAction/EditPostCompleted.vue'
+import ActionCompleted from '@/views/ActionCompleted.vue'
 
 const routes = [
   {
@@ -35,20 +34,16 @@ const routes = [
     component: PostPage,
   },
   {
-    path: '/DeletePostCompleted',
-    name: 'DeletePostCompleted',
-    component: DeletePostCompleted,
-  },
-  {
     path: '/EditPost',
     name: 'EditPost',
-    component: EditPost
+    component: EditPost,
   },
   {
-    path: '/EditPostCompleted',
-    name: 'EditPostCompleted',
-    component: EditPostCompleted,
-  },
+    path: '/ActionCompleted',
+    name: 'ActionCompleted',
+    component: ActionCompleted,
+    props: true,
+  },  
 ]
 
 const router = createRouter({

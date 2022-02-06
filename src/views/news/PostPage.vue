@@ -3,21 +3,21 @@
     <div class="cover_post">
       <div class="post_title">
         <span>
-          {{$store.state.posts.post_list.find((item) => item.id == $route.params.id).title}}
+          {{$store.state.posts.post_list.find((item) => item.id == $route.params.id)?.title}}
         </span>
       </div>
       <div class="post_image">
-        <img :src="$store.state.posts.post_list.find((item) => item.id == $route.params.id).image"/>
+        <img :src="$store.state.posts.post_list.find((item) => item.id == $route.params.id)?.image"/>
       </div>
       <div class="post_body">
         <span>
-          {{$store.state.posts.post_list.find((item) => item.id == $route.params.id).body}}
+          {{$store.state.posts.post_list.find((item) => item.id == $route.params.id)?.body}}
         </span>
       </div>
       <div class="btn_group">
         <post-button
         button_name = "Удалить"        
-        @click="$store.commit('dellete_post',$route.params.id), $router.push('/DeletePostCompleted')"/>
+        @click="$store.commit('dellete_post',$route.params.id)"/>
         <like-group /> <!-- ТУТ КОМПОНЕНТ С ЛАЙКАМИ НЕ ЗАБЫТЬ бы...-->      
         <post-button
         button_name = "Редактировать"
