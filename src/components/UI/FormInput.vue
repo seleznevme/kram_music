@@ -1,6 +1,6 @@
 <template>
   <span>{{custom_title}}</span>
-  <input :value="modelValue" @input="updateInput" :type="custom_type" :placeholder="custom_placeholder" />
+  <input :value="modelValue" @input="updateInput" :type="custom_type" :placeholder="custom_placeholder"/>
 </template>
 
 <script>
@@ -26,7 +26,8 @@ export default {
     methods: {
       updateInput (event) {
         this.$emit('update:modelValue', event.target.value)
-      }
+      },
+    
     }
 }
 </script>

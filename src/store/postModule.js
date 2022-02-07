@@ -1,4 +1,3 @@
-
 import router from '@/router'
 export const postModule = {
     state: () => ({
@@ -51,9 +50,7 @@ export const postModule = {
             state.post.body = body;
         },
         add_post(state) {
-            const answer = confirm('Вы действительно хотите изменить пост?')            
-            if (answer) {
-                state.post.id = Date.now();
+            state.post.id = Date.now();
                 state.post_list.push(Object.assign({}, state.post));            
                 state.post.title = '';
                 state.post.body = '';
@@ -63,8 +60,7 @@ export const postModule = {
                     btn_main: true,
                     btn_rewiew: true,
                     id_post_rewiew: state.post.id,
-                }})
-            }         
+                }})     
         },
         dellete_post(state, id) {
             const answer = confirm('Вы действительно хотите удалить пост?')            

@@ -2,22 +2,24 @@
   <part-sidebar>
     <form class="form_reg">
       <form-input
-          custom_title = "Логин"
-          custom_placeholder = "Ваше имя на сайте"
-          custom_type = "name"
-          v-model="sign_in.name"/>
+            custom_title="Ваш email"
+            custom_placeholder="email"
+            custom_type="email"            
+            :modelValue="$store.state.users.user_input.mail"
+            @update:modelValue="(mail) => this.$store.commit('user_input_mail', mail)"/>
         <form-input
-          custom_title = "Пароль"
-          custom_placeholder = "Введите пароль"
-          custom_type = "password"
-          v-model="sign_in.password"/>
+            custom_title="Пароль"
+            custom_placeholder="Пароль"
+            custom_type="password"            
+            :modelValue="$store.state.users.user_input.pass"
+            @update:modelValue="(pass) => this.$store.commit('user_input_pass', pass)"/>
         <div class = "btn_group">
           <form-submit
             custom_value = "Войти"/>      
           <span class="reg" @click="$router.push('/Registration')">регистрация</span>
         </div>      
     </form>
-  </part-sidebar>
+  </part-sidebar>  
   <part-sidebar>
     <span>Хочу сделать что-то вроде музыкального портала города на котором
       публиковались бы новости музыкальной сферы и афиши событий.</span>
@@ -27,19 +29,14 @@
 <script>
 
 export default {
-  name: "SidebarLeft",
-  data () {
-    return {
-      sign_in: {
-        name: '',
-        password: ''
-      }
-    }
-  }
+  name: "SidebarLeft",  
 };
 </script>
 
 <style scoped>
+span {
+  color: #ffffff;
+}
 .reg {
   color: #ffffff;
   cursor: pointer;

@@ -1,14 +1,14 @@
 <template>
   <div>
-    <cover-main>
-      <form @submit.prevent class="form_registration">
+    <cover-main>      
+      <form @submit.prevent class="form_registration">        
         <div class="reg_part_left">
           <form-input
-            custom_title="Логин"
-            custom_placeholder="Имя на сайте"
-            custom_type="login"
-            :modelValue="$store.state.users.user.login"
-            @update:modelValue="(login) => this.$store.commit('user_login', login)"/>
+            custom_title="mail"
+            custom_placeholder="Ваш e-mail"
+            custom_type="email"
+            :modelValue="$store.state.users.user.mail"
+            @update:modelValue="(mail) => this.$store.commit('user_mail', mail)"/>
           <form-input
             custom_title="Пароль"
             custom_placeholder="Пароль"
@@ -21,9 +21,7 @@
             custom_type="password"
             :modelValue="$store.state.users.user.check_pass"
             @update:modelValue="(check_pass) => this.$store.commit('user_check_pass', check_pass)"/>
-          <form-gender
-          :modelValue="$store.state.users.user.gender"
-          @update:modelValue="(gender) => this.$store.commit('user_gender', gender)"/>
+          
           <form-select
           :modelValue="$store.state.users.user.music_ganre"
           @update:modelValue="(music_ganre) => this.$store.commit('user_music_ganre', music_ganre)"/>
@@ -31,16 +29,13 @@
         <div class="reg_part_right">
           <form-input
             custom_title="Имя"
-            custom_placeholder="Ваше имя"
+            custom_placeholder="Ваше имя на сайте"
             custom_type="name"
             :modelValue="$store.state.users.user.name"
             @update:modelValue="(name) => this.$store.commit('user_name', name)"/>
-          <form-input
-            custom_title="mail"
-            custom_placeholder="Ваш e-mail"
-            custom_type="mail"
-            :modelValue="$store.state.users.user.mail"
-            @update:modelValue="(mail) => this.$store.commit('user_mail', mail)"/>
+          <form-gender
+          :modelValue="$store.state.users.user.gender"
+          @update:modelValue="(gender) => this.$store.commit('user_gender', gender)"/>         
           <form-textarea
             custom_title="О себе"
             custom_placeholder="необязательно.."

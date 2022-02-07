@@ -38,8 +38,7 @@ export default {
 
 <style scoped>
 span {
-  color: #ffffff;
-  margin-top: 5px;
+  color: #ffffff; 
 }
 textarea {
   width: 100%;

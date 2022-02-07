@@ -17,4 +17,7 @@ export default {
 </script>
 
 <style scoped>
+span {
+  color: #ffffff;
+} 
 </style>

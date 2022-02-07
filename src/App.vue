@@ -13,7 +13,7 @@
       </transition>
     </nav>
     <dialog-window
-    v-model:show="show_dialog"/>>
+    v-model:show="show_dialog"/>
     <main>
       <div class="container-fluid">
         <div class="row">
@@ -78,9 +78,6 @@ export default {
 * {
   font-family: intro_bold_italic;
   color: #000000;
-}
-main {
-  margin-top: -20px;
 }
 input:focus {
   outline: 0;

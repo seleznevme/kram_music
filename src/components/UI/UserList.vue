@@ -2,8 +2,8 @@
   <div class="list_cover">
     <span>Пользователи сайта:</span>
     <ul>
-      <li v-for="index in $store.state.users.user_list" :key="index.login">
-        {{ index.login }}
+      <li v-for="index in $store.state.users.user_list" :key="index.name">
+        {{ index.name }}
       </li>
     </ul>
   </div>
